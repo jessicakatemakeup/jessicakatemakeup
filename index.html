@@ -1,12 +1,44 @@
 <!DOCTYPE html>
-
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="css/main.css?" />
+
+        <script>
+            function includeHTML() {
+              var z, i, elmnt, file, xhttp;
+              /*loop through a collection of all HTML elements:*/
+              z = document.getElementsByTagName("*");
+              for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                /*search for elements with a certain atrribute:*/
+                file = elmnt.getAttribute("include-html");
+                if (file) {
+                  /*make an HTTP request using the attribute value as the file name:*/
+                  xhttp = new XMLHttpRequest();
+                  xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4) {
+                      if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                      if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                      /*remove the attribute, and call this function once more:*/
+                      elmnt.removeAttribute("include-html");
+                      includeHTML();
+                    }
+                  }      
+                  xhttp.open("GET", file, true);
+                  xhttp.send();
+                  /*exit the function:*/
+                  return;
+                }
+              }
+            };
+        </script>
+
     </head>
     <body>
         <div class="container">
+            <div include-html="navigation.html"></div> 
+
             <h1>Jessica Kate Makeup</h1>
             <p style="text-align:center;">
                 <a href="https://www.instagram.com/jessicakatemakeup/"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png"/></a>
@@ -37,7 +69,11 @@
                 </div>
             </div>
             <div class="footer">
+
             </div>
         </div>
+        <script>
+            includeHTML();
+        </script>
     </body>
 </html>
