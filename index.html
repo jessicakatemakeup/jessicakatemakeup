@@ -3,77 +3,17 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-            .container
-            {
-                width: 85vw;
-                margin: 0 auto;
-                position: relative;
-                min-height: 100vh;
-                padding: 0;
-                
-            }
-
-            html,
-            body {
-                height: 100vh;
-                padding: 0;
-                margin: 0;
-                background-color: white;
-            }
-
-            .content
-            {
-                margin: 2vh 2vw;
-            }
-
-            .body-content 
-            {
-                margin-top: 2vh;
-                margin-bottom: 2vh;
-                padding-left: 2vw;
-                padding-right: 2vw;
-                padding-top: 5vh;
-                padding-bottom: 5vh;
-                color: #000;
-                height: 100%;
-            }
-
-            .grid-container 
-            {
-                display: grid;
-                grid-template-columns: auto auto auto;
-            }
-            .grid-item 
-            {
-                background-color: white;
-                text-align: center;
-            }
-
-            .grid-img
-            {
-                object-fit: contain;
-                width:100%;
-                margin-left: 1vw;
-            }
-
-            h1,h2
-            {
-                text-align: center;
-            }
-
-            .center {
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-            }
-        </style>
+        <link rel="stylesheet" type="text/css" href="css/main.css?" />
     </head>
     <body>
         <div class="container">
             <h1>Jessica Kate Makeup</h1>
+            <p style="text-align:center;">
+                <a href="https://www.instagram.com/jessicakatemakeup/"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png"/></a>
+            </p>
             <div class="content body-content">
                 <div class="grid-container">
+                    <!-- ROW 1 -->
                     <div class="grid-item">
                         <img class="grid-img" src="Images/2.jpg" alt="Jess">
                     </div>
@@ -83,10 +23,21 @@
                     <div class="grid-item">
                         <img class="grid-img" src="Images/3.jpg" alt="Jess">
                     </div>  
+                    
+                    <!-- ROW 2 -->
+                    <div class="grid-item">
+                        <img class="grid-img" src="Images/5.jpg" alt="Jess">
+                    </div>
+                    <div class="grid-item">
+                        <img class="grid-img" src="Images/6.jpg" alt="Jess">
+                    </div>
+                    <div class="grid-item">
+                        <img class="grid-img" src="Images/4.jpg" alt="Jess">
+                    </div>
                 </div>
             </div>
-            <h2>Find me on Instagram</h2>
-            <a href="https://www.instagram.com/jessicakatemakeup/"><img class="center" src="https://img.icons8.com/fluent/48/000000/instagram-new.png"/></a>
+            <div class="footer">
+            </div>
         </div>
     </body>
 </html>
